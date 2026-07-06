@@ -5,14 +5,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-function Write-Info($Message) {
-    Write-Host $Message -ForegroundColor Cyan
-}
-
-function Write-ErrMsg($Message) {
-    Write-Host "ERROR: $Message" -ForegroundColor Red
-    exit 1
-}
+function Write-Info($Message) { Write-Host $Message -ForegroundColor Cyan }
+function Write-ErrMsg($Message) { Write-Host "ERROR: $Message" -ForegroundColor Red; exit 1 }
 
 $repoRoot = git rev-parse --show-toplevel 2>$null
 if (-not $repoRoot) {

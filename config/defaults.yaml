@@ -1,0 +1,7 @@
+cli:
+  color: true
+  telemetry: false
+
+help:
+  examples: true
+  related_commands: true

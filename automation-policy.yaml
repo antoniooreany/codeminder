@@ -1,0 +1,34 @@
+project:
+  name: codeminder
+  stack: python
+
+automation:
+  docs:
+    enabled: true
+    mode: autofix_if_deterministic
+
+  tests:
+    enabled: true
+    mode: changed_files_first
+    require_tests_for_changed_code: true
+
+  logging:
+    enabled: true
+    mode: warn_on_ambiguous
+    require_contextual_logging: true
+
+  exceptions:
+    enabled: true
+    mode: fail_on_ambiguous
+
+reminders:
+  enabled: true
+  weekly_digest: true
+  inactivity_days: 7
+  surface_unused_commands: true
+
+output:
+  statuses:
+    - AUTO_FIXED
+    - WARN
+    - MANUAL_REVIEW_REQUIRED

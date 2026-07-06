@@ -1,0 +1,6 @@
+# Policies
+
+Statuses:
+- AUTO_FIXED
+- WARN
+- MANUAL_REVIEW_REQUIRED

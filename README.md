@@ -3,6 +3,7 @@
 Codeminder is a policy-driven developer automation toolkit for hooks, checks, fixes, and reminders.
 
 ## CLI
+
 The local launcher is:
 
 ```powershell
@@ -34,7 +35,7 @@ Fallback mode:
 
 ## Git Flow
 
-If you bootstrap with Git Flow enabled, the repository will be initialized with git-flow locally and the develop branch will be pushed.
+Codeminder uses `main` and `develop`. Feature branches should start from `develop`.
 
 ## Repository name
 

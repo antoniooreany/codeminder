@@ -25,6 +25,12 @@ if (-not (Test-Path $hooksDir)) {
     Write-ErrMsg "hooks directory not found: $hooksDir"
 }
 
+$currentHooksPath = git config --get core.hooksPath 2>$null
+if ($LASTEXITCODE -eq 0 -and $currentHooksPath -eq "hooks" -and $Mode -eq "hookspath") {
+    Write-Host "Repository hooks path already configured: hooks" -ForegroundColor Green
+    exit 0
+}
+
 if ($Mode -eq "hookspath") {
     git config core.hooksPath hooks
     Write-Info "Configured repository hooks path: hooks"

@@ -7,18 +7,10 @@ function Write-Section($Title) {
 
 function Write-Status($Status, $Message) {
     switch ($Status) {
-        "AUTO_FIXED" {
-            Write-Host "[AUTO_FIXED] $Message" -ForegroundColor Green
-        }
-        "WARN" {
-            Write-Host "[WARN] $Message" -ForegroundColor Yellow
-        }
-        "MANUAL_REVIEW_REQUIRED" {
-            Write-Host "[MANUAL_REVIEW_REQUIRED] $Message" -ForegroundColor Red
-        }
-        default {
-            Write-Host "[$Status] $Message"
-        }
+        "AUTO_FIXED" { Write-Host "[AUTO_FIXED] $Message" -ForegroundColor Green }
+        "WARN" { Write-Host "[WARN] $Message" -ForegroundColor Yellow }
+        "MANUAL_REVIEW_REQUIRED" { Write-Host "[MANUAL_REVIEW_REQUIRED] $Message" -ForegroundColor Red }
+        default { Write-Host "[$Status] $Message" }
     }
 }
 
@@ -30,10 +22,6 @@ function Exit-Failed($Message) {
 function Exit-Succeeded($Message) {
     Write-Host $Message -ForegroundColor Green
     exit 0
-}
-
-function Test-Command($CommandName) {
-    return [bool](Get-Command $CommandName -ErrorAction SilentlyContinue)
 }
 
 function Get-RepoRoot {
